@@ -20,7 +20,7 @@ ANDROID_RUNTIME_ROOT=/apex/com.android.runtime ANDROID_DATA=/data ANDROID_TZDATA
 
 
 
-#for kali:
+#install waydroid for kali:
 ```bash
 export distro=bullseye && sudo curl https://repo.waydro.id/waydroid.gpg --output /usr/share/keyrings/waydroid.gpg
 echo "deb [signed-by=/usr/share/keyrings/waydroid.gpg] https://repo.waydro.id/ ${distro} main" | \
@@ -38,5 +38,4 @@ build_changelog
 sudo mk-build-deps -ir -t "apt -o Debug::pkgProblemResolver=yes -y --no-install-recommends"
 sudo debuild -b -uc -us
 sudo apt install -f -y ../*.deb && sudo apt install waydroid -y
-
 ```
