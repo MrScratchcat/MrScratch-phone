@@ -30,7 +30,7 @@ echo "deb [signed-by=/usr/share/keyrings/waydroid.gpg] https://repo.waydro.id/ $
   sudo tee /etc/apt/sources.list.d/waydroid.list && sudo apt update
 sudo apt install -y \
   build-essential cdbs devscripts equivs fakeroot \
-  git kde-plasma-desktop git-buildpackage git-lfs \
+  git plasma-workspace-wayland git-buildpackage git-lfs \
   libgbinder-dev && sudo wget https://raw.githubusercontent.com/MrCyjaneK/waydroid-build/main/build_changelog \
   -O /usr/bin/build_changelog
 sudo chmod +x ${_} && mkdir ~/build-packages
