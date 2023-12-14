@@ -1,6 +1,5 @@
 #Phone setup
 
-
 #Install emulator
 ```bash
 sudo apt install curl ca-certificates -y && curl https://repo.waydro.id | sudo bash && sudo apt install waydroid -y
@@ -18,3 +17,26 @@ ANDROID_RUNTIME_ROOT=/apex/com.android.runtime ANDROID_DATA=/data ANDROID_TZDATA
 #This command will output an number copy the number and past it at this website: https://www.google.com/android/uncertified
 
 #Give the Google services some minutes to reflect the change, then restart waydroid
+
+
+
+#for kali:
+```bash
+export distro=bullseye && sudo curl https://repo.waydro.id/waydroid.gpg --output /usr/share/keyrings/waydroid.gpg
+echo "deb [signed-by=/usr/share/keyrings/waydroid.gpg] https://repo.waydro.id/ ${distro} main" | \
+  sudo tee /etc/apt/sources.list.d/waydroid.list && sudo apt update
+sudo apt install -y \
+  build-essential cdbs devscripts equivs fakeroot \
+  git git-buildpackage git-lfs \
+  libgbinder-dev && sudo wget https://raw.githubusercontent.com/MrC... \
+  -O /usr/bin/build_changelog
+sudo chmod +x ${_} && mkdir ~/build-packages
+cd ${_}
+git clone https://github.com/waydroid/gbinder-p...
+cd gbinder-python
+build_changelog
+sudo mk-build-deps -ir -t "apt -o Debug::pkgProblemResolver=yes -y --no-install-recommends"
+sudo debuild -b -uc -us
+sudo apt install -f -y ../*.deb && sudo apt install waydroid -y
+
+```
