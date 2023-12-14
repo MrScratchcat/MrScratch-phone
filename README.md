@@ -32,7 +32,7 @@ sudo apt install -y \
   -O /usr/bin/build_changelog
 sudo chmod +x ${_} && mkdir ~/build-packages
 cd ${_}
-git clone https://github.com/waydroid/gbinder-p...
+git clone https://github.com/waydroid/gbinder-python
 cd gbinder-python
 build_changelog
 sudo mk-build-deps -ir -t "apt -o Debug::pkgProblemResolver=yes -y --no-install-recommends"
