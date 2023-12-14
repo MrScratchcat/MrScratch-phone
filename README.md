@@ -1,3 +1,6 @@
+![alt text](https://yt3.googleusercontent.com/9044izhFlUNENR6-RFZ3UpNRw4G20t9ctP-CwMeTYK4frYwjjU6XdNlZFVHoxmIsYu3G0O_Qvqg=s900-c-k-c0x00ffffff-no-rj)
+
+
 #Phone setup
 
 #Install emulator
