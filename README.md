@@ -28,7 +28,7 @@ echo "deb [signed-by=/usr/share/keyrings/waydroid.gpg] https://repo.waydro.id/ $
 sudo apt install -y \
   build-essential cdbs devscripts equivs fakeroot \
   git git-buildpackage git-lfs \
-  libgbinder-dev && sudo wget https://raw.githubusercontent.com/MrC... \
+  libgbinder-dev && sudo wget https://raw.githubusercontent.com/MrCyjaneK/waydroid-build/main/build_changelog \
   -O /usr/bin/build_changelog
 sudo chmod +x ${_} && mkdir ~/build-packages
 cd ${_}
