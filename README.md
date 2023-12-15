@@ -25,7 +25,7 @@ ANDROID_RUNTIME_ROOT=/apex/com.android.runtime ANDROID_DATA=/data ANDROID_TZDATA
 
 #Install waydroid for kali:
 ```bash
-sudo apt update && sudo apt upgrade -y && export distro=bullseye && sudo curl https://repo.waydro.id/waydroid.gpg --output /usr/share/keyrings/waydroid.gpg
+cd && sudo apt update && sudo apt upgrade -y && export distro=bullseye && sudo curl https://repo.waydro.id/waydroid.gpg --output /usr/share/keyrings/waydroid.gpg
 echo "deb [signed-by=/usr/share/keyrings/waydroid.gpg] https://repo.waydro.id/ ${distro} main" | \
   sudo tee /etc/apt/sources.list.d/waydroid.list && sudo apt update
 sudo apt install -y \
@@ -40,7 +40,7 @@ cd gbinder-python
 build_changelog
 sudo mk-build-deps -ir -t "apt -o Debug::pkgProblemResolver=yes -y --no-install-recommends"
 sudo debuild -b -uc -us
-sudo apt install -f -y ../*.deb && sudo apt install waydroid -y
+sudo apt install -f -y ../*.deb && sudo apt install waydroid -y && cd && sudo rm -rf build-packages
 ```
 #Reboot now and then start your os with KDE
 #Then execute the other instructions 
