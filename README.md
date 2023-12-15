@@ -42,5 +42,5 @@ sudo mk-build-deps -ir -t "apt -o Debug::pkgProblemResolver=yes -y --no-install-
 sudo debuild -b -uc -us
 sudo apt install -f -y ../*.deb && sudo apt install waydroid -y && cd && sudo rm -rf build-packages
 ```
-#Reboot now and then start your os with KDE
+#Reboot now and then switch your desktop to plasma on wayland
 #Then execute the other instructions 
