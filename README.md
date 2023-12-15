@@ -44,3 +44,13 @@ sudo apt install -f -y ../*.deb && sudo apt install waydroid -y && cd && sudo rm
 ```
 #Reboot now and then switch your desktop to plasma on wayland
 #Then execute the other instructions 
+
+
+#if your using an nvidia gpu then add this to your grub parameter:
+```bash
+sudo nano /etc/default/grub
+```
+```bash
+nvidia_drm.modeset=1
+```
+
