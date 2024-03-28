@@ -5,10 +5,8 @@
 
 #Install emulator
 ```bash
-sudo apt install curl ca-certificates -y && curl https://repo.waydro.id | sudo bash && sudo apt install waydroid -y
+sudo apt install curl ca-certificates -y && curl https://repo.waydro.id | sudo bash && sudo apt install waydroid -y && sudo waydroid init -s GAPPS -f
 ```
-#Open waydroid and change android type to GAPPS
-
 #After installation run:
 ```bash
 sudo waydroid shell
