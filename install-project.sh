@@ -1,12 +1,12 @@
 #!/bin/bash
 cd
-sudo apt update && sudo apt upgrade -y && sudo apt install -y sway* git gdm3 gnome-disk-utility waybar gnome-terminal xterm bluez-tools
+sudo apt update && sudo apt upgrade -y && sudo apt install -y sway* git brightnessctl pavucontrol thunar gdm3 gnome-disk-utility gnome-terminal xterm bluez-tools
 wget https://raw.githubusercontent.com/MrScratchcat/custom-linux-commands/main/os-update && bash os-update
 sudo wget -O /usr/share/plymouth/ubuntu-logo.png https://github.com/MrScratchcat/MrScratch-phone/blob/main/scratchcat-logo.png?raw=true
 if [ "$(pgrep -x sway)" ]; then
     echo "Sway is running. Continuing..."
 else
-    echo "Sway is not running. Exiting..."
+    echo "Reboot and choose sway desktop and then execute me again!"
     exit 1
 fi
 mkdir -p ~/.config/sway
@@ -97,11 +97,13 @@ WantedBy=graphical.target
 
 EOF
 
+mkdir $HOME/.config/waybar/
+touch $HOME/.config/waybar/config
 sudo chmod +x /usr/local/bin/waybar.sh
 sudo chmod +x /etc/systemd/system/waybar.service
 sudo systemctl daemon-reload
 systemctl enable waybar.service
 systemctl start waybar.service
-sudo apt install curl ca-certificates -y && curl https://repo.waydro.id | sudo bash && sudo apt install waydroid -y && sudo waydroid init -s GAPPS -f
+sudo apt install curl waybar ca-certificates -y && curl https://repo.waydro.id | sudo bash && sudo apt install waydroid -y && sudo waydroid init -s GAPPS -f
 sudo systemctl enable waydroid-container.service
 sudo systemctl enable bluetooth.service
